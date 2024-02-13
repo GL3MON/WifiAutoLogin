@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "WifiLogger",
+  "version": "1.0",
+  "description": "Description of my extension",
+  "icons": {
+    "48": "icon.png",
+    "64": "icon.png",
+    "128": "icon.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "24": "icon.png",
+      "32": "icon.png"
+    },
+
+    "default_title": "WifiLogger",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/fgtauth?*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ]
+}
